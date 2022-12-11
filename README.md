@@ -1,6 +1,7 @@
-##
-Deploy: https://202210-w10-miguelpgomez.netlify.app/
+## Deploy: https://202210-w10-miguelpgomez.netlify.app/
+
 # CHALLENGE 10
+
 Gentlemen pointing at you React
 
 Crea una aplicación React a partir de esta maqueta. Identifica qué datos del HTML actual son dinámicos y prográmalos para que se alimenten a partir del array proporcionado.
