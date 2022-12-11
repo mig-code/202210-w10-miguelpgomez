@@ -17,7 +17,7 @@ function App() {
                         <div className="gentleman__avatar-container">
                             <img
                                 className="gentleman__avatar"
-                                src="img/fary.jpg"
+                                src="assets/fary.jpg"
                                 alt="The Fary pointing at you"
                             />
                             <span className="gentleman__initial">F</span>
@@ -52,7 +52,7 @@ function App() {
                         <div className="gentleman__avatar-container">
                             <img
                                 className="gentleman__avatar"
-                                src="img/Julio.jpg"
+                                src="assets/Julio.jpg"
                                 alt="Julius Churchs pointing at you"
                             />
                             <span className="gentleman__initial">J</span>
@@ -87,7 +87,7 @@ function App() {
                         <div className="gentleman__avatar-container">
                             <img
                                 className="gentleman__avatar"
-                                src="img/bertin.jpg"
+                                src="assets/bertin.jpg"
                                 alt="Bertin Osbourne pointing at you"
                             />
                             <span className="gentleman__initial">B</span>
