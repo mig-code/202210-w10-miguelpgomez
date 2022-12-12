@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Button } from './buton';
 
@@ -9,8 +9,8 @@ describe('Given Button component', () => {
     const id = 1;
     test('renders a button', () => {
         render(<Button buttonClassName={buttonClassName}handleClick={handleClick} id={id} />);
-        const button = screen.getByRole('button');
+        const button = screen.getAllByTestId('btn-test');
         
-        expect(button).toBeInTheDocument();
+       fireEvent.click(button[0]);
     });
 });

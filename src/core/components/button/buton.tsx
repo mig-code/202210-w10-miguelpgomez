@@ -8,8 +8,10 @@ export function Button({
     id: number;
 }) {
     return (
-        <button>
-            <i onClick={() => handleClick(id)} className={buttonClassName}></i>
-        </button>
+        <i
+            onClick={() => handleClick(id)}
+            className={buttonClassName}
+            data-testid="btn-test"
+        ></i>
     );
 }
