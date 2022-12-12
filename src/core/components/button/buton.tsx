@@ -1,5 +1,5 @@
-export function Button() {
+export function Button({ buttonClassName }: { buttonClassName: string}) {
     return (
-        <i className="icon gentleman__icon gentleman__icon--delete fas fa-times">Click</i>
+        <i className={buttonClassName}></i>
     );
 }

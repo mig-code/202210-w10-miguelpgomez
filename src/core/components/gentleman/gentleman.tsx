@@ -1,11 +1,14 @@
-import { GentlemanItem } from "../../types/gentleman.types";
-import { Button } from "../button/buton";
+import { GentlemanItem } from '../../types/gentleman.types';
+import { Button } from '../button/buton';
 
-export function Gentleman( { gentleman}: { gentleman: GentlemanItem }){
-    console.log(gentleman.profession)
-    
+export function Gentleman({ gentleman }: { gentleman: GentlemanItem }) {
+    console.log(gentleman.profession);
+    const buttonDeleteClass =
+        'icon gentleman__icon gentleman__icon--delete fas fa-times';
+    const buttonSelectClass = 'icon gentleman__icon fas fa-check';
+
     return (
-        <li key ={gentleman.id} className="gentleman">
+        <li key={gentleman.id} className="gentleman">
             <div className="gentleman__avatar-container">
                 <img
                     className="gentleman__avatar"
@@ -33,9 +36,10 @@ export function Gentleman( { gentleman}: { gentleman: GentlemanItem }){
                     </li>
                 </ul>
             </div>
-            <Button></Button>
-            <Button></Button>
-            {/* <i className="icon gentleman__icon gentleman__icon--delete fas fa-times"></i> */}
+            <Button buttonClassName={buttonDeleteClass}></Button>
+            <Button buttonClassName={buttonSelectClass}></Button>
+            
+           
         </li>
     );
 }
