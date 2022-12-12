@@ -17,15 +17,13 @@ export function Gentlemen() {
         });
         setGentlemen(newGentlArray);
     };
-    const handleDelete = (gentleManId: number) => {
-        console.log('delete' + gentleManId);
+    function handleDelete(gentleManId: number) {
         const newGentlArray = gentlmen.filter(
             (gentleman) => gentleman.id !== gentleManId
         );
         setGentlemen(newGentlArray);
-    };
-    const handleSelect = (gentleManId: number) => {
-        console.log('select' + gentleManId);
+    }
+    function handleSelect(gentleManId: number) {
         const newGentlArray = gentlmen.map((gentleman) => {
             if (gentleman.id === gentleManId) {
                 return {
@@ -36,7 +34,7 @@ export function Gentlemen() {
             return gentleman;
         });
         setGentlemen(newGentlArray);
-    };
+    }
 
     return (
         <>
@@ -51,12 +49,8 @@ export function Gentlemen() {
                             <Gentleman
                                 key={gentleman.id}
                                 gentleman={gentleman}
-                                handleDelete={(gentleManId: number) => {
-                                    handleDelete(gentleManId);
-                                }}
-                                handleSelect={(gentleManId: number) => {
-                                    handleSelect(gentleManId);
-                                }}
+                                handleDelete={handleDelete}
+                                handleSelect={handleSelect}
                             ></Gentleman>
                         );
                     })}
