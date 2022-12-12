@@ -17,13 +17,13 @@ export function Gentlemen() {
         });
         setGentlemen(newGentlArray);
     };
-    const handleDelete = (gentleManId: number) => {
+    function handleDelete(gentleManId: number) {
         const newGentlArray = gentlmen.filter(
             (gentleman) => gentleman.id !== gentleManId
         );
         setGentlemen(newGentlArray);
-    };
-    const handleSelect = (gentleManId: number) => {
+    }
+    function handleSelect(gentleManId: number) {
         const newGentlArray = gentlmen.map((gentleman) => {
             if (gentleman.id === gentleManId) {
                 return {
@@ -34,7 +34,7 @@ export function Gentlemen() {
             return gentleman;
         });
         setGentlemen(newGentlArray);
-    };
+    }
 
     return (
         <>
