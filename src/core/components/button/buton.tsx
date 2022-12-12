@@ -1,5 +1,11 @@
-export function Button({ buttonClassName }: { buttonClassName: string}) {
-    return (
-        <i className={buttonClassName}></i>
-    );
+export function Button({
+    buttonClassName,
+    handleClick,
+    id,
+}: {
+    buttonClassName: string;
+    handleClick: (gentleManId: number) => void;
+    id: number;
+}) {
+    return <i onClick={() => handleClick(id)} className={buttonClassName}></i>;
 }

@@ -1,35 +1,65 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Gentleman } from '../../../../core/components/gentleman/gentleman';
 import { Info } from '../info/info';
 import { gentlemanData } from '../../../../core/models/gentlemen.models';
 
 export function Gentlemen() {
     const [gentlmen, setGentlemen] = useState(gentlemanData);
-    const totalSelected = gentlmen.filter((gentleman) => gentleman.selected).length;
+    const totalSelected = gentlmen.filter(
+        (gentleman) => gentleman.selected
+    ).length;
     const handleSelectAll = () => {
-        const newGentlemen = gentlmen.map((gentleman) => {
+        const newGentlArray = gentlmen.map((gentleman) => {
             return {
                 ...gentleman,
                 selected: true,
             };
         });
-        setGentlemen(newGentlemen);
+        setGentlemen(newGentlArray);
     };
-    // useEffect(() => {
-    //     console.log('useEffect');
-    // }, [gentlmen]);
+    const handleDelete = (gentleManId: number) => {
+        console.log('delete' + gentleManId);
+        const newGentlArray = gentlmen.filter(
+            (gentleman) => gentleman.id !== gentleManId
+        );
+        setGentlemen(newGentlArray);
+    };
+    const handleSelect = (gentleManId: number) => {
+        console.log('select' + gentleManId);
+        const newGentlArray = gentlmen.map((gentleman) => {
+            if (gentleman.id === gentleManId) {
+                return {
+                    ...gentleman,
+                    selected: !gentleman.selected,
+                };
+            }
+            return gentleman;
+        });
+        setGentlemen(newGentlArray);
+    };
+
     return (
         <>
-            <Info  totalSelected ={totalSelected} handleSelectAll={handleSelectAll}></Info>
+            <Info
+                totalSelected={totalSelected}
+                handleSelectAll={handleSelectAll}
+            ></Info>
             <main className="main">
                 <ul className="gentlemen">
                     {gentlmen.map((gentleman) => {
-                        if (gentleman.selected) {
-                            return (
-                                <Gentleman gentleman={gentleman}></Gentleman>
-                            );
-                        }
-                        return null;
+                        return (
+                            <li key={gentleman.id} className="gentleman">
+                                <Gentleman
+                                    gentleman={gentleman}
+                                    handleDelete={(gentleManId: number) => {
+                                        handleDelete(gentleManId);
+                                    }}
+                                    handleSelect={(gentleManId: number) => {
+                                        handleSelect(gentleManId);
+                                    }}
+                                ></Gentleman>
+                            </li>
+                        );
                     })}
                 </ul>
             </main>
