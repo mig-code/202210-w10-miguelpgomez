@@ -17,14 +17,14 @@ export function Gentleman({
         : 'icon gentleman__icon fas fa-check';
 
     return (
-        <>
+        <li className='gentleman'>
             <div className="gentleman__avatar-container">
                 <img
                     className="gentleman__avatar"
                     src={gentleman.picture}
                     alt={gentleman.alternativeText}
                 />
-                <span className="gentleman__initial">F</span>
+                <span className="gentleman__initial">{gentleman.name[0]}</span>
             </div>
             <div className="gentleman__data-container">
                 <h2 className="gentleman__name">{gentleman.name}</h2>
@@ -55,6 +55,6 @@ export function Gentleman({
                 handleClick={(gentleManId: number) => handleSelect(gentleManId)}
                 id={gentleman.id}
             ></Button>
-        </>
+        </li>
     );
 }

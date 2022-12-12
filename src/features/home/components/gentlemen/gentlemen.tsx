@@ -48,17 +48,16 @@ export function Gentlemen() {
                 <ul className="gentlemen">
                     {gentlmen.map((gentleman) => {
                         return (
-                            <li key={gentleman.id} className="gentleman">
-                                <Gentleman
-                                    gentleman={gentleman}
-                                    handleDelete={(gentleManId: number) => {
-                                        handleDelete(gentleManId);
-                                    }}
-                                    handleSelect={(gentleManId: number) => {
-                                        handleSelect(gentleManId);
-                                    }}
-                                ></Gentleman>
-                            </li>
+                            <Gentleman
+                                key={gentleman.id}
+                                gentleman={gentleman}
+                                handleDelete={(gentleManId: number) => {
+                                    handleDelete(gentleManId);
+                                }}
+                                handleSelect={(gentleManId: number) => {
+                                    handleSelect(gentleManId);
+                                }}
+                            ></Gentleman>
                         );
                     })}
                 </ul>
