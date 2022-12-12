@@ -5,11 +5,13 @@ import { Info } from './info';
 
 describe('Given Info component', () => {
     test('renders Info', () => {
+        const totalSelected = 2;
+        const mockfn = jest.fn();
         render(
-            <Info></Info>
+            <Info totalSelected={totalSelected} handleSelectAll={mockfn} ></Info>
         );
 
-        const linkElement = screen.getByText(/gentlemen pointing at you/i);
+        const linkElement = screen.getByText(/2/i);
         expect(linkElement).toBeInTheDocument();
     });
 });
