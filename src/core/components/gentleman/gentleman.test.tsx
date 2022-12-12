@@ -38,10 +38,12 @@ describe('Given Gentleman component', () => {
     ];
     test('renders a gentleman', () => {
         
+        const mockHandleDelete = jest.fn();
+        const mockHandleSelect = jest.fn();
         
-        render(<Gentleman gentleman={gentlemenMock[1]}/>);
+        render(<Gentleman gentleman={gentlemenMock[1]} handleDelete={mockHandleDelete} handleSelect={mockHandleSelect} />);
 
-        const linkElement = screen.getByText(/The Fary/i);
+        const linkElement = screen.getByText(/The Farytale/i);
         expect(linkElement).toBeInTheDocument();
     });
 });
