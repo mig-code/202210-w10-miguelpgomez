@@ -17,7 +17,7 @@ export function Gentleman({
         : 'icon gentleman__icon fas fa-check';
 
     return (
-        <li className='gentleman'>
+        <li className="gentleman">
             <div className="gentleman__avatar-container">
                 <img
                     className="gentleman__avatar"
@@ -47,12 +47,12 @@ export function Gentleman({
             </div>
             <Button
                 buttonClassName={buttonDeleteClass}
-                handleClick={(gentleManId: number) => handleDelete(gentleManId)}
+                handleClick={handleDelete}
                 id={gentleman.id}
             ></Button>
             <Button
                 buttonClassName={buttonSelectClass}
-                handleClick={(gentleManId: number) => handleSelect(gentleManId)}
+                handleClick={handleSelect}
                 id={gentleman.id}
             ></Button>
         </li>

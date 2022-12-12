@@ -51,12 +51,8 @@ export function Gentlemen() {
                             <Gentleman
                                 key={gentleman.id}
                                 gentleman={gentleman}
-                                handleDelete={(gentleManId: number) => {
-                                    handleDelete(gentleManId);
-                                }}
-                                handleSelect={(gentleManId: number) => {
-                                    handleSelect(gentleManId);
-                                }}
+                                handleDelete={handleDelete}
+                                handleSelect={handleSelect}
                             ></Gentleman>
                         );
                     })}
