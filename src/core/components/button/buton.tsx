@@ -7,5 +7,9 @@ export function Button({
     handleClick: (gentleManId: number) => void;
     id: number;
 }) {
-    return <i onClick={() => handleClick(id)} className={buttonClassName}></i>;
+    return (
+        <button>
+            <i onClick={() => handleClick(id)} className={buttonClassName}></i>
+        </button>
+    );
 }
