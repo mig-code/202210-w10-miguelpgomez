@@ -18,14 +18,12 @@ export function Gentlemen() {
         setGentlemen(newGentlArray);
     };
     const handleDelete = (gentleManId: number) => {
-        console.log('delete' + gentleManId);
         const newGentlArray = gentlmen.filter(
             (gentleman) => gentleman.id !== gentleManId
         );
         setGentlemen(newGentlArray);
     };
     const handleSelect = (gentleManId: number) => {
-        console.log('select' + gentleManId);
         const newGentlArray = gentlmen.map((gentleman) => {
             if (gentleman.id === gentleManId) {
                 return {

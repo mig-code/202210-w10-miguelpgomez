@@ -30,9 +30,8 @@ describe('Given Gentleman component', () => {
         render(<Gentlemen></Gentlemen>);
 
         const iconButtons = screen.getAllByTestId('btn-test');
-        ;
         fireEvent.click(iconButtons[3]);
-        
+
         const textElement = screen.getByText(/3/i);
         expect(textElement).toBeInTheDocument();
     });
